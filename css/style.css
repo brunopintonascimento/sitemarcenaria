@@ -188,34 +188,16 @@ footer {
     font-size: 0.9rem;
 }
 
-#projects {
-    padding: 60px 0;
-    /* Espaçamento superior e inferior */
-    display: flex;
-    /* Usar flexbox para um layout responsivo */
-    flex-wrap: wrap;
-    /* Permitir que as colunas se empilhem em telas menores */
-    justify-content: center;
-    /* Centralizar colunas */
-}
-
 #projects .col-md-4 {
     position: relative;
     overflow: hidden;
-    flex: 0 1 calc(33.333% - 20px);
-    /* Colunas de 3 em 3 com espaço */
-    margin: 10px;
-    /* Margem entre colunas */
 }
 
 #projects img {
     transition: transform 0.6s ease, opacity 0.6s ease;
     opacity: 0;
     transform: scale(1.3);
-    width: 100%;
-    /* Garantir que a imagem preencha a coluna */
-    height: auto;
-    /* Manter a proporção da imagem */
+    
 }
 
 #projects .col-md-4:hover img {
@@ -293,10 +275,10 @@ footer {
 
 .overlay-content {
     background: rgba(0, 0, 0, 0.5);
+    /* Transparência ajustada */
     color: white;
     padding: 30px;
-    text-align: center;
-    /* Centralizar texto */
+    text-align: auto;
     position: absolute;
     top: 40%;
     left: 10%;
@@ -306,11 +288,15 @@ footer {
     z-index: 10;
     line-height: 1.6;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8),
+        /* Sombra externa mais intensa */
         0 0 20px rgba(255, 255, 255, 0.3);
+    /* Sombra clara interna para destaque nas bordas */
 }
+
 
 .overlay-content h1 {
     font-family: 'Georgia', serif;
+    /* Exemplo de fonte bonita */
     font-weight: normal;
 }
 
@@ -352,11 +338,6 @@ footer {
 /* Media Queries para responsividade */
 
 @media (max-width: 768px) {
-    #projects .col-md-4 {
-        flex: 0 1 calc(50% - 20px);
-        /* Colunas de 2 em 2 em telas médias */
-    }
-
     .overlay-content {
         top: 30%;
         left: 5%;
@@ -374,11 +355,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-    #projects .col-md-4 {
-        flex: 0 1 100%;
-        /* Colunas de 1 em 1 em telas pequenas */
-    }
-
     .overlay-content {
         top: 25%;
         left: 5%;
@@ -394,43 +370,40 @@ footer {
         padding: 6px 15px;
     }
 }
-
+#projects {
+padding: 60px 0; /* Espaçamento superior e inferior */
+}
 
 /* Estilo da seção "Nossos Projetos" */
 #projects-section {
-    padding: 60px 20px;
-    background-color: #f7f7f7;
-    text-align: center;
-    border-radius: 15px;
-    /* Bordas arredondadas */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
-    position: relative;
-    overflow: hidden;
-    color: #7B4B2A;
+padding: 60px 20px;
+background-color: #f7f7f7;
+text-align: center;
+border-radius: 15px; /* Bordas arredondadas */
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+position: relative;
+overflow: hidden;
+color: #7B4B2A;
     /* Copiando a cor do título de "Sobre Nós" */
     font-size: 2.5rem;
 
 }
 
 #projects-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.7), rgba(247, 247, 247, 0.7));
-    /* Gradiente sutil */
-    z-index: 0;
-    /* Coloca o gradiente atrás do conteúdo */
-    border-radius: 15px;
-    /* Arredondar bordas do gradiente */
-    margin-bottom: 40px;
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(45deg, rgba(255, 255, 255, 0.7), rgba(247, 247, 247, 0.7)); /* Gradiente sutil */
+z-index: 0; /* Coloca o gradiente atrás do conteúdo */
+border-radius: 15px; /* Arredondar bordas do gradiente */
+margin-bottom: 40px;
 }
 
 .gallery-title {
-    font-family: 'Playfair Display', serif;
+font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     color: #9E6726;
     letter-spacing: 2px;
@@ -440,83 +413,73 @@ footer {
 }
 
 .gallery-description {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.4rem;
-    /* Aumentar tamanho da fonte */
-    color: #6d7882;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 1;
-    /* Colocar texto na frente do gradiente */
+font-family: 'Roboto', sans-serif;
+font-size: 1.4rem; /* Aumentar tamanho da fonte */
+color: #6d7882;
+margin-bottom: 40px;
+position: relative;
+z-index: 1; /* Colocar texto na frente do gradiente */
 }
 
 /* Adicione uma animação de entrada para os títulos */
 @keyframes slideIn {
-    from {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+from {
+transform: translateY(-20px);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
 }
 
 .gallery-title {
-    animation: slideIn 0.5s ease-out;
-    /* Animação suave ao aparecer */
+animation: slideIn 0.5s ease-out; /* Animação suave ao aparecer */
 }
 
 .gallery-description {
-    animation: slideIn 0.6s ease-out;
-    /* Animação suave ao aparecer */
+animation: slideIn 0.6s ease-out; /* Animação suave ao aparecer */
 }
 
 
 /* Galeria de projetos */
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    /* Espaço entre as imagens */
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px; /* Espaço entre as imagens */
 }
 
 .project-item {
-    position: relative;
-    overflow: hidden;
-    border: 5px solid #ddd;
-    /* Borda ao redor da imagem */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+position: relative;
+overflow: hidden;
+border: 5px solid #ddd; /* Borda ao redor da imagem */
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+transition: transform 0.3s ease;
 }
 
 .project-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    filter: none;
-    /* Remove qualquer filtro de preto e branco */
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.3s ease;
+filter: none; /* Remove qualquer filtro de preto e branco */
 }
 
 .project-item:hover img {
-    transform: scale(1.05);
+transform: scale(1.05);
 }
 
 /* Efeitos de animação */
 .project-item.show {
-    opacity: 1;
-    transform: scale(1.1);
+opacity: 1;
+transform: scale(1.1);
 }
 
 .project-item:hover {
-    border-image: linear-gradient(45deg, gold, orange) 1;
-    /* Borda dourada com gradiente */
-    box-shadow: 0 0 15px rgba(255, 223, 0, 0.8), 0 0 30px rgba(255, 223, 0, 0.5);
-    /* Brilho suave */
-    transition: box-shadow 0.4s ease-in-out, border-image 0.4s ease-in-out;
+border-image: linear-gradient(45deg, gold, orange) 1; /* Borda dourada com gradiente */
+box-shadow: 0 0 15px rgba(255, 223, 0, 0.8), 0 0 30px rgba(255, 223, 0, 0.5); /* Brilho suave */
+transition: box-shadow 0.4s ease-in-out, border-image 0.4s ease-in-out;
 }
 
 
@@ -525,58 +488,50 @@ footer {
 
 /* Modal aprimorado */
 .modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    max-height: 90%;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Fundo semitransparente */
-    border-radius: 10px;
-    padding: 10px;
-    /* Espaço ao redor da imagem */
-    box-sizing: border-box;
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+max-width: 90%;
+max-height: 90%;
+z-index: 1000;
+background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+border-radius: 10px;
+padding: 10px; /* Espaço ao redor da imagem */
+box-sizing: border-box;
 }
 
 .modal img {
-    width: auto;
-    /* Ajusta largura */
-    height: auto;
-    /* Ajusta altura */
-    max-width: 100%;
-    /* Limita a largura */
-    max-height: 100%;
-    /* Limita a altura */
-    object-fit: contain;
-    /* Mantém a proporção */
-    border-radius: 10px;
-    display: block;
-    margin: 0 auto;
+width: auto; /* Ajusta largura */
+height: auto; /* Ajusta altura */
+max-width: 100%; /* Limita a largura */
+max-height: 100%; /* Limita a altura */
+object-fit: contain; /* Mantém a proporção */
+border-radius: 10px;
+display: block;
+margin: 0 auto;
 }
 
 
 .modal.active {
-    display: block;
+display: block;
 }
 
 /* Botão de fechar o modal */
 .close {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s;
+position: absolute;
+top: 20px;
+right: 40px;
+color: white;
+font-size: 40px;
+font-weight: bold;
+cursor: pointer;
+transition: color 0.3s;
 }
 
 .close:hover {
-    color: #f1f1f1;
-    /* Mudança de cor suave ao passar o mouse */
+color: #f1f1f1; /* Mudança de cor suave ao passar o mouse */
 }
 
 
