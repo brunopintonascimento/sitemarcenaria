@@ -66,3 +66,16 @@ document.addEventListener("DOMContentLoaded", function () {
     showItemsOnScroll(); // Chama a função ao carregar a página
 });
 
+document.querySelectorAll('#projects img').forEach(img => {
+    img.addEventListener('click', () => {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = img.src; // Define a imagem do lightbox
+        lightbox.style.display = 'flex'; // Mostra o lightbox
+    });
+});
+
+// Adiciona um evento para fechar o lightbox ao clicar fora da imagem
+document.getElementById('lightbox').addEventListener('click', () => {
+    document.getElementById('lightbox').style.display = 'none';
+});

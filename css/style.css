@@ -221,16 +221,14 @@
     opacity: 0;
     transform: scale(1.3);
     width: 100%;
-    height: auto;
-    
+    height: 100%; /* Ajustado para preencher completamente o contêiner */
+    object-fit: cover; /* Faz com que a imagem preencha o espaço disponível */
 }
 
 #projects .col-md-4:hover img {
     transform: scale(1.05);
     opacity: 1;
     filter: grayscale(0%);
-    width: 100%;
-    height: auto;
 }
 
 @keyframes fadeInUp {
@@ -248,7 +246,8 @@
 #projects img {
     animation: fadeInUp 1s ease-in-out forwards;
     width: 100%;
-    height: auto;
+    height: 100%; /* Mantido para preencher completamente o contêiner */
+    object-fit: cover; /* Mantido para preencher o espaço */
 }
 
 #background-slideshow {
@@ -267,6 +266,7 @@
     opacity: 0;
     animation: slide-animation 15s infinite;
 }
+
 /* Ajustes para telas menores */
 @media (max-width: 768px) {
     #background-slideshow {
@@ -313,6 +313,55 @@
         opacity: 0;
     }
 }
+
+/* Estilos para o lightbox */
+.lightbox {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+}
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fixo em relação à janela */
+    z-index: 1000; /* Acima de outros conteúdos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total da tela */
+    height: 100%; /* Altura total da tela */
+    overflow: auto; /* Adiciona rolagem se necessário */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+}
+
+.modal-content {
+    margin: auto; /* Centraliza a imagem */
+    display: block; /* Exibe a imagem */
+    max-width: 90%; /* Largura máxima da imagem */
+    max-height: 90%; /* Altura máxima da imagem */
+}
+
+.close {
+    position: absolute; /* Fixo na posição */
+    top: 20px; /* Distância do topo */
+    right: 35px; /* Distância da direita */
+    color: white; /* Cor do texto do botão de fechar */
+    font-size: 40px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    cursor: pointer; /* Cursor pointer */
+}
+
+
 .overlay-content {
     background: rgba(0, 0, 0, 0.5);
     color: white;
@@ -772,5 +821,72 @@ color: #f1f1f1; /* Mudança de cor suave ao passar o mouse */
 
 .footer .fab {
     font-size: 24px;
+}
+/* Estilo geral dos botões */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    text-transform: uppercase;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão do WhatsApp */
+.btn-whatsapp {
+    background-color: #25D366;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1DA851;
+}
+
+/* Botão do Instagram */
+.btn-instagram {
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+}
+
+.btn-instagram:hover {
+    background: linear-gradient(45deg, #DD2A7B, #8134AF, #515BD4, #F58529);
+}
+
+/* Ícones */
+.btn i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+/* Estilo geral */
+.section-title {
+    font-size: 2rem; /* Tamanho do título */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.about-description {
+    font-size: 1.25rem; /* Tamanho padrão do texto */
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Estilo para dispositivos móveis */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.5rem; /* Reduz o tamanho do título em telas menores */
+    }
+
+    .about-description {
+        font-size: 1rem; /* Reduz o tamanho do texto em telas menores */
+    }
 }
 
